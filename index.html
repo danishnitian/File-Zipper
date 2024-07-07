@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Zipper</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous"/>
+    <link rel="shortcut icon" href="./favicon.PNG" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="heap.js"></script>
+    <script src="huffman.js" type="module"></script>
+    <script src="script.js" type="module"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-light " style="font-size: 25px; font-family: sans-serif; background-color: whitesmoke;">
+
+        <img src="./logo1.JPG" width="124" height="45"
+            class="d-inline-block align-top" alt="logo">
+        File Zipper using Huffman Encoding
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            <i class="fas fa-info-circle"></i> Info
+        </button>
+        
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">What is this project about?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body" style="font-size: medium;">
+                    This is a File Zipper project which I have created using Huffman Coding algorithm, which is lossless data compression algorithm. 
+                    The idea is to assign variable-length codes to input characters, lengths of the assigned codes are based on the frequencies of 
+                    corresponding characters. The most frequent character gets the smallest code and the least frequent character gets the largest code.
+                    <br>
+                    It currently works only for <strong>text</strong> files.
+                    <br><br>
+                    <strong>To Zip/Compress a file:</strong>
+                    <br>
+                    1. Click on the "Choose File" button <br>
+                    2. Select the file which you want to compress<br>
+                    3. Click on "Encode" Button and download the encoded/compressed text file.<br>
+                    <br>
+                    <strong>To UnZip/ Decompress a file:</strong> <br>
+                    1. Click on the "Choose File" button<br>
+                    2. Select the file which you want to decompress<br>
+                    3. Click on "Decode" Button and download the decoded/original text file.<br>
+                    <br>
+                </div>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        <div style="display: block; text-align: center; margin-top: 2%;">
+            <form method="post" enctype="multipart/form-data">
+                <input type="file" id="uploadedFile" hidden="hidden" />
+                <button type="button" id="custom-button">CHOOSE A FILE</button>
+                <span id="custom-text">No file chosen, yet.</span>
+            </form>
+        </div>
+        <br>
+        <button type="button" class="btn btn-success center_buttons" id="encode">
+            &nbsp;&nbsp;<i class="fas fa-lock"></i>&nbsp;&nbsp;Encode&nbsp;&nbsp;
+        </button>
+        <br>
+        <button type="button" class="btn btn-danger center_buttons" id="decode">
+            &nbsp;&nbsp;<i class="fas fa-lock-open"></i>&nbsp;&nbsp;Decode&nbsp;&nbsp;
+        </button>
+    </div>
+    <div id = "test" style="width: 100%; text-align: center; font-size: x-large;"> </div>
+    <div id = "test1" style="width: 100%; text-align: center; font-size: x-large;"> </div>
+</body>
+<footer>
+    Made with ❤️ by Anoop
+</footer>
+
+
+</html>
